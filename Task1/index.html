@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="us">
 <head>
     
     <meta charset="UTF-8">
@@ -11,18 +11,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-    <div class="container"> <h1 class="text-center mt-5">
-        Speech to Text in JS
+    <div class="container"> <h1 class="text-center mt-5" style="text-align: right;">
+        Speech to Arabic Text
     </h1>
     
         <div class="form-group">
             <textarea id="output-text"  rows="6" class="form-control"> </textarea>
         </div>
         <div class="form-group">
-            <button id="start-btn" class="btn btn-danger btn-block">
-                Start
+            <button id="start-btn" class="btn btn-danger btn-block" style="background-color: green;">
+                Start Recording
             </button>
-            <p id="action">Start Speaking</p>
+            <button id="stop-btn" class="btn btn-danger btn-block">
+                Stop Recording
+            </button>
+            <p id="action">"Press start to start listening"</p>
            </div>
     
 </div>
@@ -32,8 +35,10 @@
 
 var speechRecognition = window.speechRecognition || window.webkitSpeechRecognition;
 var recognition = new speechRecognition();
+recognition.lang = "ar-sa"
 var textbox = document.getElementById("output-text");
 var startBtn = document.getElementById("start-btn");
+var stopBtn = document.getElementById("stop-btn");
 var action = document.getElementById("action");
 var content = "";
 
