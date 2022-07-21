@@ -2,6 +2,40 @@ html {
     font-family: 'Open Sans', sans-serif;
 }
 
-main h1 {
+textarea {
+    margin: 16px;
+    direction: rtl;
+}
+
+#start-btn {
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: darkgreen;
+    color: white;
+    padding: 8px 16px;
+    margin: 16px 8px;
+    transition: background-color 200ms ease-in-out;
+}
+
+#start-btn:hover {
+    background-color: rgb(1, 65, 1);
+}
+
+#stop-btn {
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: darkred;
+    color: white;
+    padding: 8px 16px;
+    margin: 14px 8px;
+    transition: background-color 200ms ease-in-out;
+}
+
+#stop-btn:hover {
+    background-color: rgb(100, 0, 0);
+}
+
+p {
+    font-weight: 700;
     text-align: center;
 }
