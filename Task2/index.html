@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="us">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech to Text</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700">
+</head>
+
+<body>
+    <main>
+        <h1>
+            Control Arduino Using Speech
+        </h1>
+
+        <div>
+            <textarea id="output-text" rows="6" class="form-control" style="direction: rtl;"> </textarea>
+        </div>
+        <div>
+            <button>
+                Start Recording
+            </button>
+            <button>
+                Stop
+            </button>
+            <p>"Press start to start listening"</p>
+        </div>
+
+    </main>
+</body>
+
+<script>
+
+    var speechRecognition = window.speechRecognition || window.webkitSpeechRecognition;
+    var recognition = new speechRecognition();
+    recognition.lang = "ar-sa"
+    var textbox = document.getElementById("output-text");
+    var startBtn = document.getElementById("start-btn");
+    var stopBtn = document.getElementById("stop-btn");
+    var action = document.getElementById("action");
+    var content = "";
+
+
+    startBtn.addEventListener("click", function () {
+        action.textContent = "We are listening :)";
+        recognition.start();
+
+    });
+
+
+    recognition.onspeechend = function () {
+        action.textContent = "We are NOT listening";
+        recognition.stop();
+    }
+
+    recognition.onresult = function (event) {
+        textbox.textContent = event.results[0][0].transcript;
+    }
+
+</script>
+
+</html>
