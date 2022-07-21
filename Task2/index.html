@@ -28,6 +28,9 @@
         </div>
         <p id="action">"Press start to start listening"</p>
 
+        <span>This website is a test for controlling Ardunio using speech (Arabic Speech). This is not the final
+            design</span>
+
     </div>
 </body>
 
@@ -41,35 +44,23 @@
     var stopBtn = document.getElementById("stop-btn");
     var action = document.getElementById("action");
     var content = "";
-
-
+    var port;
 
     startBtn.addEventListener("click", async function () {
 
         port = await navigator.serial.requestPort({});
         await port.open({ baudRate: 9600 });
 
-
-
-
+        textbox.textContent = " ";
         action.textContent = "We are listening :)";
         recognition.start();
-
 
     });
 
     stopBtn.addEventListener("click", async function () {
         action.textContent = "We are NOT listening";
 
-        const textEncoder = new TextEncoderStream();
-        const writableStreamClosed = textEncoder.readable.pipeTo(port.writable);
-
-        const writer = textEncoder.writable.getWriter();
-        await writer.write("left");
-
-        writer.releaseLock();
     });
-
 
     recognition.onspeechend = function () {
         action.textContent = "We are NOT listening";
@@ -79,35 +70,29 @@
     recognition.onresult = function (event) {
         var result = event.results[0][0].transcript;
         textbox.textContent = result;
-        //commandAnalayzer(textbox.textContent);
+        commandAnalayzer(textbox.textContent);
     }
 
 
     async function commandAnalayzer(text) {
 
-        // const textEncoder = new TextEncoderStream();
-        // const writableStreamClosed = textEncoder.readable.pipeTo(port.writable);
-        // const writer = textEncoder.writable.getWriter();
-        // await writer.write("hello");
+        const textEncoder = new TextEncoderStream();
+        const writableStreamClosed = textEncoder.readable.pipeTo(port.writable);
+        const writer = textEncoder.writable.getWriter();
 
 
         console.log(text);
 
-        if (text.includes("يمين")) {
-
+        if (text.includes("يمين") || text.includes("right")) {
+            await writer.write("right");
         }
-        else if (text.includes("يسار")) {
-
-        }
-        else if (text.includes("وقف")) {
-
-        }
-        else if (text.includes("قف")) {
-
+        else if (text.includes("يسار") || text.includes("left")) {
+            await writer.write("left");
         }
 
-        // await port.close();
+        writer.releaseLock();
 
+        //await port.close();
     }
 
 </script>

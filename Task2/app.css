@@ -39,3 +39,10 @@ p {
     font-weight: 700;
     text-align: center;
 }
+
+span {
+    text-align: center;
+    display: block;
+    color: rgb(188, 188, 188);
+    margin-top: 128px;
+}
