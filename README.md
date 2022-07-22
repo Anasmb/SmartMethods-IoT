@@ -71,7 +71,7 @@ we should use the [Web Serial API](https://web.dev/serial/)
 
 2. Connect the Arduino to your computer and use the file "SpeechCommand.ino" in "Task 2" folder, then upload the code.
 
-3. In "Task 2" folder use the html and css files, the page should look like this ![Control Arduino Using Speech](/images/cntrl_arduino_website.png) 
+3. In "Task 2" folder use the html and css files, the page should look like this ![Control Arduino Using Speech](/images/cntrl_arduino_website.JPG) 
 
 4. Click **Start Recording** button, then select the serial port for the connected Arduino
 ![request serial port connection window](/images/serial_port_request.png)
