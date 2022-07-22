@@ -40,9 +40,21 @@ p {
     text-align: center;
 }
 
-span {
+footer {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.disclaim {
     text-align: center;
     display: block;
     color: rgb(188, 188, 188);
     margin-top: 128px;
+}
+
+.copyright {
+    text-align: center;
+    color: rgb(188, 188, 188);
 }

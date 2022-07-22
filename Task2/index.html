@@ -26,10 +26,29 @@
             <button id="start-btn"> Start Recording </button>
             <button id="stop-btn" class="btn btn-danger btn-block"> Stop </button>
         </div>
+
+        <br>
+
+        <div class="language">
+            <h6>Select Speech Language:</h6>
+            <input id="eng" type="radio" name="lang" value="English" checked>
+            <label for="lang">English</label>
+            <br>
+            <input id="arb" type="radio" name="lang" value="Arabic">
+            <label for="lang">Arabic</label>
+        </div>
+
         <p id="action">"Press start to start listening"</p>
 
-        <span>This website is a test for controlling Ardunio using speech (Arabic Speech). This is not the final
-            design</span>
+        <footer>
+            <p class="disclaim"></p>
+
+            <p class="copyright">
+                © Copyright 2022 - Written By Anasmb
+            </p>
+
+        </footer>
+
 
     </div>
 </body>
@@ -47,6 +66,15 @@
     var port;
 
     startBtn.addEventListener("click", async function () {
+
+        if (document.getElementById('arb').checked) {
+            recognition.lang = "ar-sa";
+            document.getElementById("output-text").style.direction = "rtl";
+        } else if (document.getElementById('eng').checked) {
+            recognition.lang = "en-US";
+            document.getElementById("output-text").style.direction = "ltr";
+        }
+        console.log(recognition.lang);
 
         port = await navigator.serial.requestPort({});
         await port.open({ baudRate: 9600 });
@@ -98,3 +126,4 @@
 </script>
 
 </html>
+<!-- © Copyright 2022 - Written By Anasmb -->
