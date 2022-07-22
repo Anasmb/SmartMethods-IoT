@@ -16,7 +16,7 @@ https://dl.espressif.com/dl/package_esp32_index.json
 ```
 then click OK button
 1. In your IDE go to Sketch>Include Library>Manage Libraries, in the search field type ESP32, then install **esp32** by **Espressif Systems**.
-![board manager window](/images/esp32_library.png)
+![board manager window](/images/esp32_library.PNG)
 
 1. After you install esp32 packege, in your IDE navigate to *Tools>Board>ESP32 Arduino*, then select **ESP32 Dev Module** (if you have a different esp32 module you should select it).
 ![boards window](/images/esp32_boards.png)
