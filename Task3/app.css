@@ -1,0 +1,23 @@
+body {
+    background-color: #111213ff;
+}
+
+
+.container {
+    margin: 10% auto;
+    width: 50%;
+    height: 40vh;
+    border: solid 1px #2f71e8ff;
+    border-radius: 24px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sensor_container {
+    height: 100%;
+    width: 50%;
+}
+
+.sensor_container:nth-of-type(1) {
+    border-right: solid 1px #2f71e8ff;
+}
