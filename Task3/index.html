@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <!-- © Copyright 2022 - Written By Anasmb -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,28 +39,29 @@
 
     <script>
         //http://localhost/sensors/getSensorValues.php
-        //  var intervalID = window.setInterval(updateValues, 2000);
-
-        var obj, xmlhttp;
-        xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("GET", "http://127.0.0.1/sensors/getSensorValues.php", true);
-        xmlhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                myObj = JSON.parse(this.responseText);
-                document.getElementById("temperature").innerHTML = myObj[0].Temperature;
-                document.getElementById("humidity").innerHTML = myObj[0].Humidity;
-                document.getElementById("updatedDate").innerHTML = myObj[0].AddedOnData;
-                console.log(myObj[0].Temperature);
-            }
-
-
-        };
-        xmlhttp.send();
-
+        var interval = 30000;//refresh values every 30 sec
+        function getValues() {
+            var xmlhttp;
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET", "http://127.0.0.1/sensors/getSensorValues.php", true);
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    myObj = JSON.parse(this.responseText);
+                    document.getElementById("temperature").innerHTML = myObj[0].Temperature;
+                    document.getElementById("humidity").innerHTML = myObj[0].Humidity;
+                    document.getElementById("updatedDate").innerHTML = myObj[0].AddedOnData;
+                    console.log(myObj[0].Temperature);
+                }
+            };
+            xmlhttp.send();
+        }
+        setInterval(function () {
+            getValues()
+        }, interval);
 
 
     </script>
-
+    <!-- © Copyright 2022 - Written By Anasmb -->
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 <?php
-
+//© Copyright 2022 - Written By Anasmb 
 $conn = mysqli_connect("localhost", "root", '', "esp32");
 
 if (mysqli_connect_errno()) {
