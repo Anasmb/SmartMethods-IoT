@@ -7,7 +7,7 @@ body {
     margin: 10% auto;
     width: 50%;
     height: 40vh;
-    border: solid 1px #2f71e8ff;
+    border: solid 5px #2f71e8ff;
     border-radius: 24px;
     display: flex;
     justify-content: space-evenly;
@@ -19,5 +19,34 @@ body {
 }
 
 .sensor_container:nth-of-type(1) {
-    border-right: solid 1px #2f71e8ff;
+    border-right: solid 5px #2f71e8ff;
+}
+
+.sensor_container h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.sensor_value {
+    margin: auto;
+    height: 75%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.sensor_value h1 {
+    font-size: 6rem;
+    color: white;
+}
+
+.updated {
+    text-align: center;
+    color: #a1a1a1ff;
+}
+
+.updated span {
+    color: #29b9f0ff;
 }
