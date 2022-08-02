@@ -6,6 +6,7 @@
 1. [About](#about)
 2. [Task 1: Speech To Text Website, Initialize ESP32 Module](#task1)
 3. [Task 2: Control Arduino using speech](#task2)
+4. [Task 3: POST and GET from database](#task3)
 
 
 <div id='about'/>
@@ -81,7 +82,7 @@ we should use the [Web Serial API](https://web.dev/serial/)
 5. Allow the browser to use your microphone, then try to say "Right" or "Left", or in **Arabic** you can say "يمين" or "يسار".
 <br> if you say *"Right"* or *"يمين"* the servo should turn right, same thing if you say *"Left"* or *"يسار"* the servo should turn left.
 
-
+<div id='task3'/>
 ## Task 3: POST and GET from database:
 
 In this task we will have a ESP32 with dht11 sensor (temperature & humidity sensor). <br>
