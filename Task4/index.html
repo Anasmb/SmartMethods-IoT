@@ -32,15 +32,85 @@
         </span>
 
 
-
     </div>
-
 
     <script>
 
+        var leftImage = document.getElementById("leftImg");
+        var upImage = document.getElementById("upImg");
+        var downImage = document.getElementById("downImg");
+        var rightImage = document.getElementById("rightImg");
+        var clickStarted;
+
+
+        leftImage.addEventListener("mousedown", function (evt) { //while user holding the button
+            console.log("left button clicked at");
+            clickStarted = new Date();
+            sendMovement("left", 0);
+        });
+
+        leftImage.addEventListener("mouseup", function (evt) { // when user unhold the button
+            console.log("left button unclicked at");
+            var currentDate = new Date();
+            var clickedDuration = (currentDate - clickStarted); // calculate how long did the user hold the button
+            sendMovement("stop", clickedDuration);
+        });
+
+        upImage.addEventListener("mousedown", function (evt) { //while user holding the button
+            console.log("up button clicked at");
+            clickStarted = new Date();
+            sendMovement("up", 0);
+        });
+
+        upImage.addEventListener("mouseup", function (evt) { // when user unhold the button
+            console.log("up button unclicked at");
+            var currentDate = new Date();
+            var clickedDuration = (currentDate - clickStarted); // calculate how long did the user hold the button
+            sendMovement("stop", clickedDuration);
+        });
+
+        downImage.addEventListener("mousedown", function (evt) { //while user holding the button
+            console.log("down button clicked at");
+            clickStarted = new Date();
+            sendMovement("up", 0);
+        });
+
+        downImage.addEventListener("mouseup", function (evt) { // when user unhold the button
+            console.log("down button unclicked at");
+            var currentDate = new Date();
+            var clickedDuration = (currentDate - clickStarted); // calculate how long did the user hold the button
+            sendMovement("stop", clickedDuration);
+        });
+
+        rightImage.addEventListener("mousedown", function (evt) { //while user holding the button
+            console.log("right button clicked at");
+            clickStarted = new Date();
+            sendMovement("up", 0);
+        });
+
+        rightImage.addEventListener("mouseup", function (evt) { // when user unhold the button
+            console.log("right button unclicked at");
+            var currentDate = new Date();
+            var clickedDuration = (currentDate - clickStarted); // calculate how long did the user hold the button
+            sendMovement("stop", clickedDuration);
+        });
+
+
+
+        function sendMovement(direction, duration) { // send the direction and the duration to DB
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("POST", "http://127.0.0.1/sensors/sendMovementValues.php", true);
+            xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xmlhttp.load = function () {
+                console.log(this.reponseText);
+            }
+            xmlhttp.send("direction=" + direction + "&duration=" + duration);
+        }
+
+
+
 
     </script>
-
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
         integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"

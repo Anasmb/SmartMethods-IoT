@@ -10,8 +10,11 @@ img {
     align-self: center;
 }
 
-
 span {
     display: flex;
     justify-content: space-evenly;
+}
+
+img:hover {
+    background-color: rgb(219, 219, 219);
 }
