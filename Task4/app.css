@@ -1,0 +1,17 @@
+.container {
+    max-width: 40%;
+    display: flex;
+}
+
+img {
+    height: 80px;
+    width: 80px;
+    display: block;
+    align-self: center;
+}
+
+
+span {
+    display: flex;
+    justify-content: space-evenly;
+}
