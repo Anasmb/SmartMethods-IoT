@@ -57,26 +57,26 @@
         });
 
         upImage.addEventListener("mousedown", function (evt) { //while user holding the button
-            console.log("up button clicked at");
+            console.log("forward button clicked at");
             clickStarted = new Date();
-            sendMovement("up", 0);
+            sendMovement("forward", 0);
         });
 
         upImage.addEventListener("mouseup", function (evt) { // when user unhold the button
-            console.log("up button unclicked at");
+            console.log("forward button unclicked at");
             var currentDate = new Date();
             var clickedDuration = (currentDate - clickStarted); // calculate how long did the user hold the button
             sendMovement("stop", clickedDuration);
         });
 
         downImage.addEventListener("mousedown", function (evt) { //while user holding the button
-            console.log("down button clicked at");
+            console.log("backward button clicked at");
             clickStarted = new Date();
-            sendMovement("down", 0);
+            sendMovement("backward", 0);
         });
 
         downImage.addEventListener("mouseup", function (evt) { // when user unhold the button
-            console.log("down button unclicked at");
+            console.log("backward button unclicked at");
             var currentDate = new Date();
             var clickedDuration = (currentDate - clickStarted); // calculate how long did the user hold the button
             sendMovement("stop", clickedDuration);
