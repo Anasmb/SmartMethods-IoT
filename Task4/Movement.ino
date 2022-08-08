@@ -52,10 +52,10 @@ void loop() {
      // Serial.print("1 = ");
       //Serial.println(movementReadingsArr[0]);
 
-      if(movementReadingsArr[0]["Direction"].equals("up")){ 
+      if(movementReadingsArr[0]["Direction"].equals("forward")){ 
         //Proceed to move FORWARD
       }
-      else if(movementReadingsArr[0]["Direction"].equals("down")){ 
+      else if(movementReadingsArr[0]["Direction"].equals("backward")){ 
         //Proceed to move BACKWARD
       }
       else if(movementReadingsArr[0]["Direction"].equals("right")){ 

@@ -72,7 +72,7 @@
         downImage.addEventListener("mousedown", function (evt) { //while user holding the button
             console.log("down button clicked at");
             clickStarted = new Date();
-            sendMovement("up", 0);
+            sendMovement("down", 0);
         });
 
         downImage.addEventListener("mouseup", function (evt) { // when user unhold the button
@@ -85,7 +85,7 @@
         rightImage.addEventListener("mousedown", function (evt) { //while user holding the button
             console.log("right button clicked at");
             clickStarted = new Date();
-            sendMovement("up", 0);
+            sendMovement("right", 0);
         });
 
         rightImage.addEventListener("mouseup", function (evt) { // when user unhold the button
