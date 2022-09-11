@@ -84,6 +84,7 @@ we should use the [Web Serial API](https://web.dev/serial/)
 <br> if you say *"Right"* or *"يمين"* the servo should turn right, same thing if you say *"Left"* or *"يسار"* the servo should turn left.
 
 <div id='task3'/>
+
 ## Task 3: POST and GET from database:
 
 In this task we will have a ESP32 with dht11 sensor (temperature & humidity sensor). <br>
